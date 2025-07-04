@@ -6,7 +6,7 @@ const { setupMetrics } = require('./controllers/metricsController');
 const metricsRoutes = require('./routes/metrics');
 
 // Configuration
-const PORT = process.env.PORT || 3007;
+const PORT = process.env.PORT;
 const app = express();
 
 // Middleware
@@ -56,6 +56,6 @@ app.get('/', (req, res) => {
 
 // Démarrage du serveur
 app.listen(PORT, () => {
-  console.log(`🔍 Service de métriques démarré sur le port ${PORT}`);
-  console.log(`📊 Métriques Prometheus disponibles sur http://localhost:${PORT}/metrics`);
+  console.log(`📊 Le service de métriques écoute sur le port ${PORT}`);
+  console.log(`➡️  Point d'accès aux métriques : /metrics`);
 }); 
