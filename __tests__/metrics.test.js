@@ -1,7 +1,7 @@
 const request = require('supertest');
 const express = require('express');
-const metricsRouter = require('../routes/metrics');
-const { register } = require('../controllers/metricsController');
+const metricsRouter = require('../src/routes/metrics');
+const { register } = require('../src/controllers/metricsController');
 
 // Créer une application Express pour les tests
 const app = express();

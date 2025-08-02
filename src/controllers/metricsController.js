@@ -156,10 +156,11 @@ const observeHistogram = (req, res) => {
 /**
  * Récupère toutes les métriques
  */
-const getAllMetrics = (req, res) => {
+const getAllMetrics = async (req, res) => {
   try {
     res.set('Content-Type', 'text/plain');
-    res.end(register.metrics());
+    const metrics = await register.metrics();
+    res.end(metrics);
   } catch (error) {
     logger.error('Erreur lors de la récupération des métriques', { error: error.message });
     res.status(500).json({ error: 'Erreur lors de la récupération des métriques' });
